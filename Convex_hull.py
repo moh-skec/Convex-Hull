@@ -151,8 +151,14 @@ class PayoffMatrixInput:
             end_point = (point_on_hull + 1) % n
 
             for j in range(n):
-                if np.cross(points[end_point] - points[hull[-1]], points[j] - points[hull[-1]]) < 0:
-                    end_point = j
+                if j != hull[-1]:
+                    # Compute the 2D cross product manually
+                    direction = np.array(
+                        [points[end_point] - points[hull[-1]], points[j] - points[hull[-1]]])
+                    cross_product = direction[0, 0] * direction[1,
+                                                                1] - direction[0, 1] * direction[1, 0]
+                    if cross_product < 0:
+                        end_point = j
 
             point_on_hull = end_point
             if end_point == hull[0]:
