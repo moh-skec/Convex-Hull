@@ -63,9 +63,11 @@ This project is a Python application that allows users to input a general-sum tw
 ## Screenshots
 
 ![Input Screen](screenshots/input_screen.png)
+
 *Example of the matrix input screen.*
 
 ![Output Plot](screenshots/output_plot.png)
+
 *Example of the output plot showing the convex hull and Pareto optimal points.*
 
 ## License
